@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 import sys
 from scipy import stats
 
+plt.ioff()
 
 # In[17]:
 

@@ -7,6 +7,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import fftpack
+plt.ioff()
 
 print('\n Question 2 : Gaussian random field')
 def gaussian_random_field(power, size):
