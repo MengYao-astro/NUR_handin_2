@@ -185,7 +185,7 @@ plt.savefig('q5_e1.png')
 #plot fourier space
 plt.figure()
 plt.title('Fourier sapce')
-plt.imshow(F_2D_result)
+plt.imshow(np.abs(F_2D_result))
 plt.colorbar()
 plt.savefig('q5_e2.png')
 #plt.show()

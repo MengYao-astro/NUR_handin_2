@@ -4,12 +4,14 @@ The work has three part as follow: First, I pre-processing the data including la
 Data are labelled first according to the parameter 'T90' showing the amount of long(label = 1) object is much more than otherwise. I revise the other features and find that there are many missing values, therefore, handling the missing data is of greaat importance.
 
 I first plot the histogram to check the feature values.
+
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.9\linewidth]{q6_1.png}
   \caption{Histograms of the features}
   \label{fig:hist_feature}
 \end{figure}
+
 It's seems that the mass M and metality Z conform to the gauss distribution. Meanwhile, SFR fits the exoponential distribution. Therefore, I choose to fill the non-determinded variables with random number with specific distribution. The data with SSFR and AV are few, so I decided to give up these two features.
 
 
