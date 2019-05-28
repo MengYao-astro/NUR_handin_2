@@ -86,7 +86,7 @@ plt.savefig('q5_b2.png')
 
 def DFT_slow(x):
     #1-D discrete Fourier Transform 
-    x = np.array(x, dtype=float)
+    x = np.array(x, dtype=np.complex)
     N = len(x)
     n = np.arange(N)
     k = n.reshape((N, 1))
@@ -94,11 +94,11 @@ def DFT_slow(x):
     return np.dot(M, x)     # use vector multiplication
 def FFT_1D(x):
     # 1-D Fast FT
-    x = np.array(x, dtype=float)   
+    x = np.array(x, dtype=np.complex)   
     N = len(x)
  
     if N % 2 != 0:
-        raise ValueError("size of x must be a power of 2")
+        raise ValueError("size should be even number")
     elif N <= 4 :    #  end of the recurse 
         return DFT_slow(x)
     else:
