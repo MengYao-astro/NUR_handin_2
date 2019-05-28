@@ -78,7 +78,7 @@ ax1_1.set_xlabel('t')
 ax1_1.set_ylabel('D(t)')
 fig1.suptitle('case1')
 fig1.savefig('q3_case1.png')
-fig1.show()
+#fig1.show()
 
 
 # In[32]:
@@ -102,7 +102,7 @@ ax2_1.set_xlabel('t')
 ax2_1.set_ylabel('D(t)')
 fig2.suptitle('case2')
 fig1.savefig('q3_case2.png')
-fig2.show()
+#fig2.show()
 
 
 # In[34]:
@@ -127,7 +127,7 @@ ax3_1.set_xlabel('t')
 ax3_1.set_ylabel('D(t)')
 fig3.suptitle('case3')
 fig1.savefig('q3_case3.png')
-fig3.show()
+#fig3.show()
 
 
 # In[ ]:

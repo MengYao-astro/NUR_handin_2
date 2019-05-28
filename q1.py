@@ -83,7 +83,7 @@ ax4_1.set_ylabel('quantity of numbers')
 ax4_1.set_title('Histogram of 1 million numbers')
 fig4.tight_layout()
 fig4.savefig('q1a1m.png')
-fig4.show()
+#fig4.show()
 print('figure of random number generator please see fig.1')
 print('roughly test the quality of RNG by show the largest and smallest number among bins:')
 print('max = ',max(hist_n1m_uni[0]),'; min = ',min(hist_n1m_uni[0]))
@@ -143,7 +143,7 @@ for i in range(1,6):
 ax2_1.legend(loc='best')
 fig2.suptitle('normally distributed random number test')
 fig2.savefig('q1b.png')
-fig2.show()
+#fig2.show()
 
 
 # In[19]:
@@ -288,7 +288,7 @@ ax3_4.set_xscale('log')
 fig3.tight_layout()
 fig3.suptitle('KS-test from 10 to 10000 numbers',y = 1)
 fig3.savefig('q1c.png')
-fig3.show()
+#fig3.show()
 '''
 I thought D is the maxium value from all the points that I put into the test.
 In this case , I calculated 10^5 distances between ECDF and Gaussion CDF.
@@ -344,11 +344,9 @@ plt.xlabel('set number')
 plt.ylabel('D max')
 plt.title('KS-test w.r.t Gaussian of 10 examples and my random number')
 plt.savefig('q1d.png')
-plt.show()
+#plt.show()
 print('from the figure, we can see that my random number has a lower D value of KS-test compared to the examples.')
 
-
-# In[24]:
 
 
 #let's save a array for question 2, which will contain 1024**2 numbers
@@ -356,7 +354,6 @@ normal_rn_q2 = Box_Muller(generator(4*512*512,123456789))
 np.save('normal_rn_q2', normal_rn_q2)
 
 
-# In[ ]:
 
 
 

@@ -60,18 +60,9 @@ for n in [-1.0, -2.0, -3.0]:
     plt.colorbar()
     plt.savefig('q2_{0}.png'.format(int(-n))
     #plt.show()
-a = gaussian_random_field(-1, size=1024)[1]
 
 print('\n show a row of Fourier plane = ',gaussian_random_field(n, size=1024)[1][0])
 
-
-# In[194]:
-
-
-print('{0}'.format(1))
-
-
-# In[ ]:
 
 
 

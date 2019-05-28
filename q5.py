@@ -72,7 +72,7 @@ plt.title('the number of particles landed in cell 4')
 plt.ylabel('number')
 plt.xlabel('x position')
 plt.savefig('q5_b1.png')
-plt.show()
+#plt.show()
 
 
 # repeat for cell 0, when x = 0 to 1, cell 0 should be equal to 1 
@@ -81,7 +81,7 @@ plt.title('the number of particles landed in cell 0')
 plt.ylabel('number')
 plt.xlabel('x position')
 plt.savefig('q5_b2.png')
-plt.show()
+#plt.show()
 
 
 # In[213]:
@@ -184,17 +184,14 @@ plt.imshow(fun2_xy)
 plt.colorbar()
 plt.title('Function')
 plt.savefig('q5_e1.png')
-plt.show()
+#plt.show()
 #plot fourier space
 plt.figure()
 plt.title('Fourier sapce')
 plt.imshow(F_2D_result)
 plt.colorbar()
 plt.savefig('q5_e2.png')
-plt.show()
-
-
-# In[ ]:
+#plt.show()
 
 
 
