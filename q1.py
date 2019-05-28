@@ -62,7 +62,7 @@ seed = 123456789
 print('seed = ', seed)
 #first 1000 numbers and plot
 n1k_uni = generator(1000,seed)
-fig1 = plt.figure(1)
+fig1 = plt.figure()
 ax1_1 = fig1.add_subplot(2,1,1)
 ax1_1.scatter(n1k_uni[0:-2], n1k_uni[1:-1])
 ax1_1.set_xlabel("$X_i$")
@@ -75,7 +75,7 @@ ax1_2.set_xlabel('index')
 fig1.savefig("q1a1k.png")
 fig1.tight_layout()
 # 1 million numbers and plot
-fig4 = plt.figure(4)
+fig4 = plt.figure()
 n1m_uni=generator(10**6,seed)
 ax4_1=fig4.add_subplot(1,1,1)
 hist_n1m_uni = ax4_1.hist(n1m_uni, bins=np.linspace(0.0, 1.0, 21),edgecolor='black') #plot the histogram and save the elements
@@ -125,7 +125,7 @@ n1k_normal_1b = 2.4 * n1k_normal               # target sigma is 2.4
 n1k_normal_1b += 3.                            # target mean is 3
 
 #plot the normal random number histogram and corresponding Gaussian line
-fig2 = plt.figure(2)
+fig2 = plt.figure()
 #hist
 ax2_1 = fig2.add_subplot(1,1,1)
 hist_n1k_normal_1b = ax2_1.hist(n1k_normal_1b, bins=np.linspace(3-2.4*5, 3+2.4*5, 21),
@@ -263,7 +263,7 @@ for i in range(len(index_ks)):
 
 
 #plot consistentcy 
-fig3 = plt.figure(3)
+fig3 = plt.figure()
 #plot Dmax vs the amount of numbers I used to test
 ax3_1 = fig3.add_subplot(2,2,1)
 ax3_1.scatter(index_ks, Dmax)
