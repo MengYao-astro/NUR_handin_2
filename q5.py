@@ -47,7 +47,7 @@ for i in range(4):
     plt.imshow(ngp[:,:,z[i]],extent=[0,16,16,0])
     plt.colorbar()
     plt.savefig('q5_a{}.png'.format(int(i))
-    plt.show()
+    #plt.show()
 
 
 # In[106]:
