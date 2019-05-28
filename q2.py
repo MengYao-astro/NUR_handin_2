@@ -59,10 +59,10 @@ for n in [-1.0, -2.0, -3.0]:
     plt.xlabel('kpc')
     plt.xlabel('kpc')
     plt.colorbar()
-    plt.savefig('q2_{0}.png'.format(int(-n))
+    plt.savefig('q2_{0}.png'.format(int(-n)))
     #plt.show()
 
-print('\n show a row of Fourier plane = ',gaussian_random_field(n, size=1024)[1][0])
+#print('\n show a row of Fourier plane = ',gaussian_random_field(n, size=1024)[1][0])
 
 
 

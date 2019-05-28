@@ -9,8 +9,6 @@ import matplotlib.pyplot as plt
 plt.ioff()
 
 
-# In[105]:
-
 
 '''
 Question 5 : Mass assignment schemes
@@ -22,6 +20,7 @@ for 3 dimensions W(r_p-r_ijk) = W(x_p-x_ijk)*W(Y)*W(Z)
 NGP is the simplest PM algorithm that assume particles are point-like and all of particles's mass is assigned to 
 the single grid cell that contains it
 '''
+
 print('Question 5 : Mass assignment schemes')
 print('\n 5(a)')
 def NGP(cell_size, positions):
@@ -45,13 +44,10 @@ grid = NGP((16,16,16),positions)
 z=[4,9,11,14]
 for i in range(4):
     plt.title('z={0} layer'.format(z[i]))
-    plt.imshow(ngp[:,:,z[i]],extent=[0,16,16,0])
+    plt.imshow(grid[:,:,z[i]],extent=[0,16,16,0])
     plt.colorbar()
-    plt.savefig('q5_a{}.png'.format(int(i))
+    plt.savefig('q5_a{}.png'.format(int(i)))
     #plt.show()
-
-
-# In[106]:
 
 
 '''
@@ -142,7 +138,7 @@ def FFT_2D(x):
     '''
     2-D FFT. Becuase FFT_2D = FFT(FFT(x),y)
     '''
-    F_xy = np.array(np.zeros(x.shape))
+    F_xy = np.array(np.zeros(x.shape),dtype = np.complex)
     # 1-D Fourier transform through the rows
     for i in range(len(x)):
         F_xy[i,:] = FFT_1D(x[i,:])
@@ -154,9 +150,9 @@ def FFT_2D(x):
 def FFT_3D(x):
     '''
     3-D FFT. Becuase FFT_3D = FFT_2D(FFT_2D(FFT_2D(x,y)),(y,z)),(x,z)))?
-    I thought I am wrong here, sorry.
+    I think I am wrong here, sorry.
     '''
-    F_xyz = np.array(np.zeros(x.shape))
+    F_xyz = np.array(np.zeros(x.shape),dtype = np.complex)
     # 2-D Fourier transform through the x
     for i in range(len(x)):
         F_xyz[i,:,:] = FFT_2D(x[i,:,:])

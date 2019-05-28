@@ -332,7 +332,7 @@ def Kuiper_test(array, CDF):
 
 # In[22]:
 
-
+print('1(e) Comparision)
 num_examples=np.genfromtxt('randomnumbers.txt')
 D_examples = np.zeros(10)
 for i in range(10):
@@ -344,7 +344,7 @@ plt.legend(loc='best')
 plt.xlabel('set number')
 plt.ylabel('D max')
 plt.title('KS-test w.r.t Gaussian of 10 examples and my random number')
-plt.savefig('q1d.png')
+plt.savefig('q1e.png')
 #plt.show()
 print('from the figure, we can see that my random number has a lower D value of KS-test compared to the examples.')
 

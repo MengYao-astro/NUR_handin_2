@@ -24,8 +24,8 @@ Question 6 : Classifying gamma-ray bursts
 print('Question 6 : Classifying gamma-ray bursts')
 #data = pd.read_csv('GRBs.txt', sep='\s+')
 data = np.genfromtxt('GRBs.txt', usecols=(2,3,4,5,6,7,8))
-data = pd.DataFrame(data, columns=['Redshift', 'T90', 'log(M*/M☉)', 'SFR',
-                                   'log(Z/Z☉)', 'SSFR', 'AV'])
+data = pd.DataFrame(data, columns=['Redshift', 'T90', 'log(M*/M_sun)', 'SFR',
+                                   'log(Z/Z_sun)', 'SSFR', 'AV'])
 data['label'] = None
 #Assign the label based on T90 parameter
 data['label'][data['T90'] < 10] = 0
@@ -41,25 +41,25 @@ print('Data Shape:', data.shape)
 
 
 # Check the missing data
-index_M = data['log(M*/M☉)'] != -1
+index_M = data['log(M*/M_sun)'] != -1
 index_SFR = data['SFR'] != -1
-index_Z = data['log(Z/Z☉)'] != -1
+index_Z = data['log(Z/Z_sun)'] != -1
 index_SSFR = data['SSFR'] != -1
 index_AV = data['AV'] != -1
 
 fig = plt.figure(figsize=(10,6))
 
 ax1 = fig.add_subplot(2,3,1)
-M = ax1.hist(data['log(M*/M☉)'][index_M], density=True)
-ax1.set_xlabel('log(M*/M☉) %s '%len(data['log(M*/M☉)'][index_M]))
+M = ax1.hist(data['log(M*/M_sun)'][index_M], density=True)
+ax1.set_xlabel('log(M*/M_sun) %s '%len(data['log(M*/M_sun)'][index_M]))
 
 ax2 = fig.add_subplot(2,3,2)
 SFR = ax2.hist(data['SFR'][index_SFR], density=True)
 ax2.set_xlabel('SFR %s' %len(data['SFR'][index_SFR]))
 
 ax3 = fig.add_subplot(2,3,3)
-Z = ax3.hist(data['log(Z/Z☉)'][index_Z], density=True)
-ax3.set_xlabel('log(Z/Z☉ %s)' %len(data['log(Z/Z☉)'][index_Z]))
+Z = ax3.hist(data['log(Z/Z_sun)'][index_Z], density=True)
+ax3.set_xlabel('log(Z/Z_sun %s)' %len(data['log(Z/Z_sun)'][index_Z]))
 
 ax4 = fig.add_subplot(2,3,4)
 SSFR = ax4.hist(data['SSFR'][index_SSFR], density=True)
@@ -82,19 +82,19 @@ fig.savefig('q6_1.png')
 
 
 #Processing the missing data
-miu_M = np.mean(data['log(M*/M☉)'][index_M])
-sigma_M = np.std(data['log(M*/M☉)'][index_M])
+miu_M = np.mean(data['log(M*/M_sun)'][index_M])
+sigma_M = np.std(data['log(M*/M_sun)'][index_M])
 lambda_SFR = np.mean(data['SFR'][index_SFR])
-miu_Z = np.mean(data['log(Z/Z☉)'][index_Z])
-sigma_Z = np.std(data['log(Z/Z☉)'][index_Z])
+miu_Z = np.mean(data['log(Z/Z_sun)'][index_Z])
+sigma_Z = np.std(data['log(Z/Z_sun)'][index_Z])
 
-index = data['log(M*/M☉)'] == -1
+index = data['log(M*/M_sun)'] == -1
 index_len = len(index)
-data['log(M*/M☉)'][index] = np.random.normal(miu_M, sigma_M, index_len)   
+data['log(M*/M_sun)'][index] = np.random.normal(miu_M, sigma_M, index_len)   
 
-index = data['log(Z/Z☉)'] == -1
+index = data['log(Z/Z_sun)'] == -1
 index_len = len(index)
-data['log(Z/Z☉)'][index] = np.random.normal(miu_Z, sigma_Z, size=index_len)   
+data['log(Z/Z_sun)'][index] = np.random.normal(miu_Z, sigma_Z, size=index_len)   
 
 index = data['SFR'] == -1
 index_len = len(index)
@@ -115,7 +115,7 @@ def sigmoid(z):
 #     return -1/m * ()
 
 def load_data(data):
-    cols = ['Redshift', 'log(M*/M☉)', 'SFR', 'log(Z/Z☉)']
+    cols = ['Redshift', 'log(M*/M_sun)', 'SFR', 'log(Z/Z_sun)']
     data_Input = pd.DataFrame(data, columns=cols)
     data_Input = np.array(data_Input)
     data_Label = data['label']
