@@ -1,0 +1,31 @@
+\section{Question 2 : Gaussian random field}
+I am sorry I don't understand the symmetric thing very well. I asked TA about this but still not very clear. I know that if I take a 2-D matrix of real numbers and do Fourier transform, I will find conjugate symmetry in Fourier space. However, when I did this, I generated k**2 = kx**2 + ky**2 for right half of Fourier space and take P(k) = k**power as an amplitude. I did this separetly in two (512,512) array. 
+Then I have four (512,512) Gaussian distributed random numbers arrays which were generated and saved in question.
+Those Gaussian arrays represent real part and imaginary part for two amplitude arrays. I took conjugate symmetric matrix, with respect to the center, of region 1 and region 2. Finally I combined those 4 arrays to get a (1024,1024) matrix which represented 
+the field in Fourier space.
+
+\lstinputlisting{q2.py}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\linewidth]{q2_1.png}
+  \caption{Density field 1}
+  \label{fig:q2_1} 
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\linewidth]{q2_2.png}
+  \caption{Density field 2}
+  \label{fig:q2_2} 
+\end{figure}
+
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\linewidth]{q2_3.png}
+  \caption{Density field 3}
+  \label{fig:q2_3} 
+\end{figure}
+
+The mistakes are caused by my misunderstanding on symmetry.

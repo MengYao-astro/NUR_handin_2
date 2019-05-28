@@ -1,0 +1,30 @@
+\section{Question 6 : Classifying gamma-ray bursts}
+The work has three part as follow: First, I pre-processing the data including label the data and processing the missing data. Second, I conducting the gradiant ascend algorithm to train the classifer. Conclusion and discussion are followed in the last part.
+\subsection{Data Processing}
+Data are labelled first according to the parameter 'T90' showing the amount of long(label = 1) object is much more than otherwise. I revise the other features and find that there are many missing values, therefore, handling the missing data is of greaat importance.
+
+I first plot the histogram to check the feature values.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\linewidth]{q6_1.png}
+  \caption{Histograms of the features}
+  \label{fig:hist_feature}
+\end{figure}
+It's seems that the mass M and metality Z conform to the gauss distribution. Meanwhile, SFR fits the exoponential distribution. Therefore, I choose to fill the non-determinded variables with random number with specific distribution. The data with SSFR and AV are few, so I decided to give up these two features.
+
+
+\subsection{Train the classification}
+Applying the gradiant ascend algorithm, I plot two figures to show my results.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\linewidth]{q6_2.png}
+  \caption{Accuracy and loss}
+  \label{fig:hist_feature}
+\end{figure}
+The figures show that the classifer is well trained even if the result is not relative good enough. The histogram displays the similarity between true label and predicted result, however, the accuracy is merely 70 percent, which could be better.
+
+\subsection{Discussion}
+I think this lower accuracy is due to my handling of missing values. Because of wrong filled value, the intrinsic feature of some objects changed which lead to a bad result. I can't totally blame it on the bad algorithm in which play a role. Based on this, I can not discuss which features play the key role in classifying the class.
+
+\lstinputlisting{q6.py}

@@ -1,0 +1,64 @@
+\section{Question 1 : Normally distributed pseudo-random numbers}
+The shared modules
+\lstinputlisting{q1main_to_show.py}
+
+\subsection{1.a  Pseudo-random numbers}
+\lstinputlisting{q1a_to_show.py}
+
+seed =  123456789\\
+figure of random number generator please see fig.1 \\
+roughly test the quality of RNG by show the largest and smallest number among bins:\\
+max =  50341.0 ; min =  49714.0\\
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\linewidth]{q1a1k.png}
+  \caption{The results of the first 1000 numbers of RNG }
+  \label{fig:n1k}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\linewidth]{q1a1m.png}
+  \caption{Histogram of 1 million random numbers in 20 bins with a width of 0.05}
+  \label{fig:n1m}
+\end{figure}
+
+
+\subsection{1.b Normally distributed random number}
+\lstinputlisting{q1b_to_show.py}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\linewidth]{q1b.png}
+  \caption{Histogram of 1000 normally distributed random number compared with Guassian distribution}
+  \label{fig:normal_random}
+\end{figure}
+
+
+\subsection{1.c KS-test}
+\lstinputlisting{q1c_to_show.py}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\linewidth]{q1c.png}
+  \caption{The upper panels show the maxium distance of KS-test for my test and scipy test; 
+  the lower panels show the P value}
+  \label{fig:ks_test}
+\end{figure}
+
+\subsection{1.d Kuiper's test}
+\lstinputlisting{q1d_to_show.py}
+My algorithm takes too long during my testing, I will just show it without resluts.
+
+\subsection{1.e Compare random numbers with exampels}
+\lstinputlisting{q1e_to_show.py}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\linewidth]{q1e.png}
+  \caption{Comparision of my random numbers and examples based on D values of KS-test}
+  \label{fig:comparision}
+\end{figure}
+According to the figure, my set of random numbers has a lower D value of KS-test compared to the examples.
+This means it shows more consistency with corresponding Gaussian distribution.

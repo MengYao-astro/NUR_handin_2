@@ -1,0 +1,32 @@
+\section{Question 3 : Linear structure growth}
+Basically, this question is to solve a ODE, we will use 4th order Runge-Kutta method.
+Since omega_m = 1, the differential equation becomes :
+D''+4/(3t)*D' = 2/(3t**2)*D.
+
+In terms of Runge-Kutta, for every iteration, I use a pair of D and D' as an input to calculate D''. Then I will have all information of this present state in order to calculate next state. The pair of D and D' will be updated by R-K method and used
+in next iteration.
+
+\lstinputlisting{q3.py}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\linewidth]{q3_case1.png}
+  \caption{Result provied by Runge-Kutta method and analytical solution of case1.}
+  \label{fig:q3_case1}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\linewidth]{q3_case2.png}
+  \caption{Result provied by Runge-Kutta method and analytical solution of case2.}
+  \label{fig:q3_case1}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\linewidth]{q3_case3.png}
+  \caption{Result provied by Runge-Kutta method and analytical solution of case3.}
+  \label{fig:q3_case1}
+\end{figure}
+
+The fugures show that my results fit with analytical solution very well.

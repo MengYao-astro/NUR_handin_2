@@ -1,0 +1,95 @@
+\section{Question 5 : Mass assignment schemes}
+\subsection{a. Nearest Grid Point}
+I loop over the particles and assign their densties to the cells and the fraction of particle's mass assigned to 
+a cell 'ijk' is the S(x) averaged over this cell.For 3 dimensions, W(ijk) = W(X)*W(Y)*W(Z). 
+NGP is the simplest PM algorithm that assume particles are point-like and all of particles's mass is assigned to 
+the single grid cell that contains it.
+
+\lstinputlisting{q5a_to_show.py}
+
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\linewidth]{q5_a0.png}
+  \caption{Slice of NGP at z = 4.}
+  \label{fig:NGP4}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\linewidth]{q5_a1.png}
+  \caption{Slice of NGP at z = 9.}
+  \label{fig:NGP9}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\linewidth]{q5_a2.png}
+  \caption{Slice of NGP at z = 11.}
+  \label{fig:NGP11}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\linewidth]{q5_a3.png}
+  \caption{Slice of NGP at z = 14.}
+  \label{fig:NGP14}
+\end{figure}
+
+
+\subsection{b. Test NGP}
+I moved one particle along x axis and test the number in cell0 and cell4.
+When x is from 0 to 1, particle number in cell0 should be equal to 1.
+When x is from 4 to 5, particle number in cell4 should be equal to 1.
+\lstinputlisting{q5b_to_show.py}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\linewidth]{q5_b1.png}
+  \caption{Robustness test on cell0}
+  \label{fig:cell0}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\linewidth]{q5_b2.png}
+  \caption{Robustness test on cell4}
+  \label{fig:cell4}
+\end{figure}
+
+
+\subsection{d. Fast Fourier transform}
+\lstinputlisting{q5d_to_show.py}
+
+I used y = sin(x) to do the test, whose analytical frequency should be 1/2pi.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\linewidth]{q5_d.png}
+  \caption{Robustness test on cell0}
+  \label{fig:FFT_1D}
+\end{figure}
+
+My result's peak shows great consistency with both np.fft and analytical Fourier transform.
+
+
+\subsection{e. FTT in 2-D and 3-D}
+
+\lstinputlisting{q5be_to_show.py}
+
+I used sin(x+y) as a testing funtion.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\linewidth]{q5_e1.png}
+  \caption{Testing function}
+  \label{fig:FFT_2D_fun}
+\end{figure}
+
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\linewidth]{q5_e2.png}
+  \caption{My FFT on testing function}
+  \label{fig:FFT_2D}
+\end{figure}
