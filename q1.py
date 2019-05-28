@@ -332,7 +332,7 @@ def Kuiper_test(array, CDF):
 
 # In[22]:
 
-print('1(e) Comparision)
+print('1(e) Comparision')
 num_examples=np.genfromtxt('randomnumbers.txt')
 D_examples = np.zeros(10)
 for i in range(10):
