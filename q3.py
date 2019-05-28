@@ -102,7 +102,7 @@ ax2_1.legend(loc='best')
 ax2_1.set_xlabel('t')
 ax2_1.set_ylabel('D(t)')
 fig2.suptitle('case2')
-fig1.savefig('q3_case2.png')
+fig2.savefig('q3_case2.png')
 #fig2.show()
 
 
@@ -127,7 +127,7 @@ ax3_1.legend(loc='best')
 ax3_1.set_xlabel('t')
 ax3_1.set_ylabel('D(t)')
 fig3.suptitle('case3')
-fig1.savefig('q3_case3.png')
+fig3.savefig('q3_case3.png')
 #fig3.show()
 
 

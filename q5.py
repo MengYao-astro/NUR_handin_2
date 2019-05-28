@@ -45,7 +45,6 @@ z=[4,9,11,14]
 for i in range(4):
     plt.title('z={0} layer'.format(z[i]))
     plt.imshow(grid[:,:,z[i]],extent=[0,16,16,0])
-    plt.colorbar()
     plt.savefig('q5_a{}.png'.format(int(i)))
     #plt.show()
 
@@ -178,7 +177,6 @@ F_2D_result = FFT_2D(fun2_xy)
 #plot function
 plt.figure()
 plt.imshow(fun2_xy)
-plt.colorbar()
 plt.title('Function')
 plt.savefig('q5_e1.png')
 #plt.show()
@@ -186,7 +184,6 @@ plt.savefig('q5_e1.png')
 plt.figure()
 plt.title('Fourier sapce')
 plt.imshow(np.abs(F_2D_result))
-plt.colorbar()
 plt.savefig('q5_e2.png')
 #plt.show()
 
